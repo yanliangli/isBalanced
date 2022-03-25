@@ -1,5 +1,7 @@
 package main;
 
+import java.util.Stack;
+
 public class Parser {
 
     /**
@@ -8,6 +10,18 @@ public class Parser {
      * @return a boolean that denotes whether the string is balanced : true if string is balanced, or false if it is not.
      */
     public boolean isBalanced(String s) {
-        return true;
+        Stack<Character> myStack = new Stack<>();
+        for (char c : s.toCharArray()) {
+            if (c == '{') {
+                myStack.push('}');
+            } else if (c == '(') {
+                myStack.push(')');
+            } else {
+                if (myStack.isEmpty() || myStack.pop() != c) {
+                    return false;
+                }
+            }
+        }
+        return myStack.isEmpty();
     }
 }
