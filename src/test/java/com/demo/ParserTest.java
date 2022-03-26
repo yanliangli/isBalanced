@@ -1,6 +1,6 @@
-package test;
+package com.demo;
 
-import main.Parser;
+import com.demo.Parser;
 import org.junit.Assert;
 import org.junit.Test;
 
