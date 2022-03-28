@@ -1,6 +1,5 @@
 package com.demo;
 
-import com.demo.Parser;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -8,15 +7,15 @@ public class ParserTest {
     private Parser parser = new Parser();
 
     private static String TEST_VALID_INPUT_ONE = "";
-    private static String TEST_VALID_INPUT_TWO = "()";
-    private static String TEST_VALID_INPUT_THREE = "({})()";
-    private static String TEST_VALID_INPUT_FOUR = "{}{()}({})";
+    private static String TEST_VALID_INPUT_TWO = "{}()";
+    private static String TEST_VALID_INPUT_THREE = "{()}";
+    private static String TEST_VALID_INPUT_FOUR = "({()})";
     private static String TEST_VALID_INPUT_FIVE = "({})({({({()})})})()(({({({()})})}))";
 
-    private static String TEST_INVALID_INPUT_ONE = "(";
-    private static String TEST_INVALID_INPUT_TWO = "}{}{(){{}";
-    private static String TEST_INVALID_INPUT_THREE = ")({})(";
-    private static String TEST_INVALID_INPUT_FOUR = "}())(}";
+    private static String TEST_INVALID_INPUT_ONE = "{}(";
+    private static String TEST_INVALID_INPUT_TWO = "({)}";
+    private static String TEST_INVALID_INPUT_THREE = "((";
+    private static String TEST_INVALID_INPUT_FOUR = "}{";
     private static String TEST_INVALID_INPUT_FIVE = "({({({(({{({()})})}))})})})";
 
     @Test
