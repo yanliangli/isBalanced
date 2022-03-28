@@ -13,15 +13,21 @@ public class Solution {
         Parser parser = new Parser();
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please enter string inputs: ");
-        List<String> inputList = new ArrayList<>();
+        List<String> inputList;
         try {
             inputList = parseInput(scanner);
         } catch (IsBalancedParseException e) {
             System.out.println("Failed to parse user inputs. Error = " + e.getMessage());
+            return;
         }
         displayOutput(parser, inputList);
     }
 
+    /**
+     * Parse user input using STDIN and return all input strings in an array list
+     * @param scanner: scanner object to read STDIN
+     * @return a list of input strings
+     */
     private static List<String> parseInput(Scanner scanner) {
         List<String> inputList = new ArrayList<>();
         String nextInput = scanner.nextLine();
