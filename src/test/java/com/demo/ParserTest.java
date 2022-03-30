@@ -18,6 +18,8 @@ public class ParserTest {
     private static String TEST_INVALID_INPUT_FOUR = "}{";
     private static String TEST_INVALID_INPUT_FIVE = "({({({(({{({()})})}))})})})";
 
+    private static String TEST_INVALID_CHARACHTER = "(abc)";
+
     @Test
     public void testIsBalancedSuccessOne() {
         boolean isBalanced = parser.isBalanced(TEST_VALID_INPUT_ONE);

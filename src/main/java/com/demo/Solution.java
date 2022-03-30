@@ -7,20 +7,20 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Solution {
-    private static final String VALID_INPUT_FORMAT = "[(,),{,}]{0,49}";
-
+    private static final String VALID_INPUT_FORMAT = "[(){}]{0,49}";
     public static void main(String[] args) {
         Parser parser = new Parser();
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Please enter string inputs: ");
         List<String> inputList;
         try {
             inputList = parseInput(scanner);
         } catch (IsBalancedParseException e) {
             System.out.println("Failed to parse user inputs. Error = " + e.getMessage());
+            scanner.close();
             return;
         }
         displayOutput(parser, inputList);
+        scanner.close();
     }
 
     /**
@@ -29,6 +29,7 @@ public class Solution {
      * @return a list of input strings
      */
     private static List<String> parseInput(Scanner scanner) {
+        System.out.println("Please enter string inputs: ");
         List<String> inputList = new ArrayList<>();
         String nextInput = scanner.nextLine();
         if (nextInput.isEmpty()) {
